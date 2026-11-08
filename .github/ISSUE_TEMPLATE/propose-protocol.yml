@@ -1,0 +1,49 @@
+name: Propose a protocol
+description: Suggest a protocol with overlooked balances that the catalog should check.
+title: 'Protocol proposal: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share public protocol information only. Do not include personal wallet addresses, seed phrases, private keys or credentials.
+        For a vulnerability, follow [.github/SECURITY.md](https://github.com/Defi-checkup/deficheckup/blob/main/.github/SECURITY.md) instead of posting details here.
+  - type: input
+    id: protocol
+    attributes:
+      label: Protocol
+      description: The protocol's full name.
+    validations:
+      required: true
+  - type: input
+    id: chain
+    attributes:
+      label: Chain
+      description: Network name and chain ID, if applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: contracts
+    attributes:
+      label: Contract addresses in full
+      description: One public protocol contract or program per line, with its chain and official source. Never include a user's wallet. For an API-only protocol, explain why there is no fixed contract.
+    validations:
+      required: true
+  - type: input
+    id: official-link
+    attributes:
+      label: Official link
+      description: The protocol's official website or documentation, not a directory or search result.
+    validations:
+      required: true
+  - type: textarea
+    id: forgotten
+    attributes:
+      label: Why do funds get forgotten?
+      description: Describe the position, why portfolio trackers miss it, and how users can recover it through the official app.
+    validations:
+      required: true
+  - type: textarea
+    id: deadline
+    attributes:
+      label: Recovery deadline, if any
+      description: State the date, time and timezone with an official source, or say no known deadline. Distinguish reward end dates from recovery deadlines.

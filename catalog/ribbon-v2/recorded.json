@@ -1,0 +1,434 @@
+{
+  "recordedOn": "2026-11-02T17:28:17.346Z",
+  "endpoint": "https://ethereum-rpc.publicnode.com",
+  "block": "0x191be0b",
+  "owners": [
+    "0x68B5d2b865da2C90F05E10c62Ade13edc4461708",
+    "0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"
+  ],
+  "discovery": {
+    "matureTransaction": "https://etherscan.io/tx/0xe93a69d2e3179de79544bdb0e1cc5688d63a98daa6b49ae54eb7397fb5194401",
+    "blockedTransaction": "https://etherscan.io/tx/0x02e01963974e9a27e35462a8371b7f7ea0e6bb50640ad13d2c5aec01d4b4e5c8",
+    "mature": {
+      "recordedOn": "2026-11-02",
+      "endpoint": "https://ethereum.reth.rs/rpc",
+      "query": {
+        "address": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+        "fromBlock": "0x1626d9b",
+        "toBlock": "0x163f43a",
+        "topics": ["0x0c53c82ad07e2d592d88ece3b066777dd60f1118e2a081b380efc4358f0d9e2a"]
+      },
+      "totalLogs": 2,
+      "selectedEvent": {
+        "address": "0x25751853eab4d0eb3652b5eb6ecb102a2789644b",
+        "topics": [
+          "0x0c53c82ad07e2d592d88ece3b066777dd60f1118e2a081b380efc4358f0d9e2a",
+          "0x00000000000000000000000068b5d2b865da2c90f05e10c62ade13edc4461708"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000cbb29e5d67bfd700000000000000000000000000000000000000000000000000000000000000d1",
+        "blockHash": "0x5988a22e511f7d40e2ea8fb577c0430af80e1d5454d21ce92c226e90b97e7153",
+        "blockNumber": "0x163b5a4",
+        "blockTimestamp": "0x68bd94e3",
+        "transactionHash": "0xe93a69d2e3179de79544bdb0e1cc5688d63a98daa6b49ae54eb7397fb5194401",
+        "transactionIndex": "0x1f",
+        "logIndex": "0xa2",
+        "removed": false
+      }
+    },
+    "blocked": {
+      "recordedOn": "2026-11-02",
+      "endpoint": "https://ethereum.reth.rs/rpc",
+      "selectedEvent": {
+        "address": "0x25751853eab4d0eb3652b5eb6ecb102a2789644b",
+        "topics": [
+          "0x0c53c82ad07e2d592d88ece3b066777dd60f1118e2a081b380efc4358f0d9e2a",
+          "0x000000000000000000000000607d82d78646b28bd08f92d7ca350e76316bf66d"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000014e1d4fa5583dd800000000000000000000000000000000000000000000000000000000000000dd",
+        "blockHash": "0x088ad690ae06d7a3081faadc0c6eb99a243bb1deb4f79c127e254621dfc72630",
+        "blockNumber": "0x1915ec5",
+        "blockTimestamp": "0x6ae44cab",
+        "transactionHash": "0x02e01963974e9a27e35462a8371b7f7ea0e6bb50640ad13d2c5aec01d4b4e5c8",
+        "transactionIndex": "0x2a",
+        "logIndex": "0x6b",
+        "removed": false
+      },
+      "totalLogs": 1
+    }
+  },
+  "contracts": [
+    {
+      "address": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x25751853Eab4D0eB3652B5eB6ecB102A2789644B?fields=all",
+      "match": "exact_match",
+      "name": "AdminUpgradeabilityProxy",
+      "codeBytes": 1670,
+      "codeSha256": "04d51bad376320e0fa706ed6d6f013a40268e76b2a5729af4d28cddfb62c5061",
+      "proxyResolution": {
+        "isProxy": true,
+        "proxyType": "EIP1967Proxy",
+        "implementations": [
+          {
+            "address": "0xEaf743E9FE7449Ae3Ce02Bc01712666530D2666e",
+            "name": "RibbonThetaVaultWithSwap"
+          }
+        ]
+      }
+    },
+    {
+      "address": "0xEaf743E9FE7449Ae3Ce02Bc01712666530D2666e",
+      "url": "https://sourcify.dev/server/v2/contract/1/0xEaf743E9FE7449Ae3Ce02Bc01712666530D2666e?fields=all",
+      "match": "match",
+      "name": "RibbonThetaVaultWithSwap",
+      "codeBytes": 22796,
+      "codeSha256": "2a706010ddb533f5e77166edf8dd948050877a7614d617476a6eb02e1b2befe6",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    },
+    {
+      "address": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "url": "https://sourcify.dev/server/v2/contract/1/0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3?fields=all",
+      "match": "exact_match",
+      "name": "RibbonVaultPauser",
+      "codeBytes": 6129,
+      "codeSha256": "def6339f35b3f785ae3ead8a39c70f9ff72e37cd100ca060707763ba1c16190b",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    },
+    {
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "url": "https://sourcify.dev/server/v2/contract/1/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2?fields=all",
+      "match": "match",
+      "name": "WETH9",
+      "codeBytes": 3124,
+      "codeSha256": "5566bf50796faf93c9b6f6adacd3b32c70bfe16b48ffc59db6cd144cbdc89739",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    },
+    {
+      "address": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F?fields=all",
+      "match": "exact_match",
+      "name": "AdminUpgradeabilityProxy",
+      "codeBytes": 1670,
+      "codeSha256": "04d51bad376320e0fa706ed6d6f013a40268e76b2a5729af4d28cddfb62c5061",
+      "proxyResolution": {
+        "isProxy": true,
+        "proxyType": "EIP1967Proxy",
+        "implementations": [
+          {
+            "address": "0xEaf743E9FE7449Ae3Ce02Bc01712666530D2666e",
+            "name": "RibbonThetaVaultWithSwap"
+          }
+        ]
+      }
+    },
+    {
+      "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599?fields=all",
+      "match": "match",
+      "name": "WBTC",
+      "codeBytes": 4582,
+      "codeSha256": "1377b93c57d7373bf87a742b4783deff88599e7a1bcca58f0a5d6a93e8a2973b",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    }
+  ],
+  "configurations": [
+    {
+      "vault": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "impl": "0xEaf743E9FE7449Ae3Ce02Bc01712666530D2666e",
+      "params": [
+        false,
+        18,
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "10000000000",
+        "20000000000000000000000"
+      ],
+      "pauser": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "symbol": "rETH-THETA"
+    },
+    {
+      "vault": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "impl": "0xEaf743E9FE7449Ae3Ce02Bc01712666530D2666e",
+      "params": [
+        false,
+        8,
+        "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+        "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+        "1000",
+        "75000000000"
+      ],
+      "pauser": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "symbol": "rBTC-THETA"
+    }
+  ],
+  "reads": [
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function vaultParams() view returns(bool,uint8,address,address,uint56,uint104)",
+      "args": [],
+      "result": [
+        false,
+        18,
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "10000000000",
+        "20000000000000000000000"
+      ],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc200000000000000000000000000000000000000000000000000000002540be40000000000000000000000000000000000000000000000043c33c1937564800000"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function symbol() view returns(string)",
+      "args": [],
+      "result": "rETH-THETA",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a724554482d544845544100000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function vaultPauser() view returns(address)",
+      "args": [],
+      "result": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "raw": "0x000000000000000000000000e04e8ae290965ad4f7e40c68041c493d2e89cdc3"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function vaultParams() view returns(bool,uint8,address,address,uint56,uint104)",
+      "args": [],
+      "result": [
+        false,
+        8,
+        "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+        "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+        "1000",
+        "75000000000"
+      ],
+      "raw": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c5990000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c59900000000000000000000000000000000000000000000000000000000000003e80000000000000000000000000000000000000000000000000000001176592e00"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function symbol() view returns(string)",
+      "args": [],
+      "result": "rBTC-THETA",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a724254432d544845544100000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function vaultPauser() view returns(address)",
+      "args": [],
+      "result": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "raw": "0x000000000000000000000000e04e8ae290965ad4f7e40c68041c493d2e89cdc3"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function depositReceipts(address) view returns(uint16,uint104,uint128)",
+      "args": ["0x68B5d2b865da2C90F05E10c62Ade13edc4461708"],
+      "result": [6, "0", "0"],
+      "raw": "0x000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function withdrawals(address) view returns(uint16,uint128)",
+      "args": ["0x68B5d2b865da2C90F05E10c62Ade13edc4461708"],
+      "result": [209, "57335813513920471"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000d100000000000000000000000000000000000000000000000000cbb29e5d67bfd7"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function vaultState() view returns(uint16,uint104,uint104,uint128,uint128)",
+      "args": [],
+      "result": [
+        221,
+        "323761631783821688640",
+        "323202859929956623839",
+        "10700000000000000",
+        "379645029023699518724"
+      ],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000dd0000000000000000000000000000000000000000000000118d1860bea782bf40000000000000000000000000000000000000000000000011855738b44365a5df00000000000000000000000000000000000000000000000000260397e318c00000000000000000000000000000000000000000000000001494a2167394794504"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function shareBalances(address) view returns(uint256,uint256)",
+      "args": ["0x68B5d2b865da2C90F05E10c62Ade13edc4461708"],
+      "result": ["1", "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "signature": "function pausedPositions(address,address) view returns(uint16,uint128)",
+      "args": [
+        "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+        "0x68B5d2b865da2C90F05E10c62Ade13edc4461708"
+      ],
+      "result": [0, "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function depositReceipts(address) view returns(uint16,uint104,uint128)",
+      "args": ["0x68B5d2b865da2C90F05E10c62Ade13edc4461708"],
+      "result": [0, "0", "0"],
+      "raw": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function withdrawals(address) view returns(uint16,uint128)",
+      "args": ["0x68B5d2b865da2C90F05E10c62Ade13edc4461708"],
+      "result": [0, "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function vaultState() view returns(uint16,uint104,uint104,uint128,uint128)",
+      "args": [],
+      "result": [221, "275802441", "275486246", "224632", "1573869113"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000dd000000000000000000000000000000000000000000000000000000001070694900000000000000000000000000000000000000000000000000000000106b96260000000000000000000000000000000000000000000000000000000000036d78000000000000000000000000000000000000000000000000000000005dcf5639"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function shareBalances(address) view returns(uint256,uint256)",
+      "args": ["0x68B5d2b865da2C90F05E10c62Ade13edc4461708"],
+      "result": ["0", "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "signature": "function pausedPositions(address,address) view returns(uint16,uint128)",
+      "args": [
+        "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+        "0x68B5d2b865da2C90F05E10c62Ade13edc4461708"
+      ],
+      "result": [0, "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function vaultState() view returns(uint16,uint104,uint104,uint128,uint128)",
+      "args": [],
+      "result": [
+        221,
+        "323761631783821688640",
+        "323202859929956623839",
+        "10700000000000000",
+        "379645029023699518724"
+      ],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000dd0000000000000000000000000000000000000000000000118d1860bea782bf40000000000000000000000000000000000000000000000011855738b44365a5df00000000000000000000000000000000000000000000000000260397e318c00000000000000000000000000000000000000000000000001494a2167394794504"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function shareBalances(address) view returns(uint256,uint256)",
+      "args": ["0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"],
+      "result": ["0", "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function depositReceipts(address) view returns(uint16,uint104,uint128)",
+      "args": ["0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"],
+      "result": [22, "0", "0"],
+      "raw": "0x000000000000000000000000000000000000000000000000000000000000001600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function withdrawals(address) view returns(uint16,uint128)",
+      "args": ["0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"],
+      "result": [221, "94044870135004632"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000dd000000000000000000000000000000000000000000000000014e1d4fa5583dd8"
+    },
+    {
+      "to": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "signature": "function pausedPositions(address,address) view returns(uint16,uint128)",
+      "args": [
+        "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+        "0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"
+      ],
+      "result": [0, "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function depositReceipts(address) view returns(uint16,uint104,uint128)",
+      "args": ["0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"],
+      "result": [0, "0", "0"],
+      "raw": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function vaultState() view returns(uint16,uint104,uint104,uint128,uint128)",
+      "args": [],
+      "result": [221, "275802441", "275486246", "224632", "1573869113"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000dd000000000000000000000000000000000000000000000000000000001070694900000000000000000000000000000000000000000000000000000000106b96260000000000000000000000000000000000000000000000000000000000036d78000000000000000000000000000000000000000000000000000000005dcf5639"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function withdrawals(address) view returns(uint16,uint128)",
+      "args": ["0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"],
+      "result": [0, "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+      "signature": "function shareBalances(address) view returns(uint256,uint256)",
+      "args": ["0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"],
+      "result": ["0", "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0xE04e8Ae290965AD4F7E40c68041c493d2e89cDC3",
+      "signature": "function pausedPositions(address,address) view returns(uint16,uint128)",
+      "args": [
+        "0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F",
+        "0x607D82D78646b28Bd08F92d7Ca350E76316BF66d"
+      ],
+      "result": [0, "0"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function roundPricePerShare(uint256) view returns(uint256)",
+      "args": ["209"],
+      "result": "747702522781092855",
+      "raw": "0x0000000000000000000000000000000000000000000000000a605f7ba407cbf7"
+    },
+    {
+      "to": "0x25751853Eab4D0eB3652B5eB6ecB102A2789644B",
+      "signature": "function completeWithdraw()",
+      "args": [],
+      "from": "0x68B5d2b865da2C90F05E10c62Ade13edc4461708",
+      "raw": "0x"
+    },
+    {
+      "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "signature": "function balanceOf(address) view returns(uint256)",
+      "args": ["0x25751853Eab4D0eB3652B5eB6ecB102A2789644B"],
+      "result": "375828611648848041736",
+      "raw": "0x0000000000000000000000000000000000000000000000145fab7311bdd29708"
+    },
+    {
+      "to": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "signature": "function balanceOf(address) view returns(uint256)",
+      "args": ["0x65a833afDc250D9d38f8CD9bC2B1E3132dB13B2F"],
+      "result": "1647345465",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000062307f39"
+    }
+  ],
+  "blocked": "Error: {\"code\":3,\"message\":\"execution reverted: Round not closed\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000010526f756e64206e6f7420636c6f73656400000000000000000000000000000000\"}",
+  "notes": [
+    "All state reads and simulations in reads use the explicit block shown above. No transaction was sent.",
+    "codeSha256 hashes the decoded eth_getCode bytes, not the hexadecimal text."
+  ]
+}

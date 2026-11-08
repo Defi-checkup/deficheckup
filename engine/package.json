@@ -1,0 +1,13 @@
+{
+  "name": "@deficheckup/engine",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The contract every check follows, and the code that runs them.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "viem": "2.57.13"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@deficheckup/catalog",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One folder per protocol: how to detect funds, and how to get them out.",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "@deficheckup/engine": "workspace:*"
+  }
+}

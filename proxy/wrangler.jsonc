@@ -1,0 +1,74 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "deficheckup-proxy",
+  "main": "src/index.ts",
+  // The newest date the pinned workerd supports (wrangler 4.156.0, 2026-11-01).
+  "compatibility_date": "2026-10-30",
+  "workers_dev": false,
+  "preview_urls": false,
+  // Production API host. Cloudflare provisions its DNS record and certificate.
+  "routes": [{ "pattern": "api.deficheckup.com", "custom_domain": true }],
+  "vars": {
+    // TURNSTILE_SECRET_KEY and SCAN_PASS_SECRET are Worker secrets, never vars or files.
+    // pnpm dev supplies local-only test bindings without reading any secret file.
+    "ALLOWED_ORIGINS": "https://deficheckup.com,https://www.deficheckup.com",
+  },
+  // Per IP per minute for 10 wallets: 10 Safe owner lists + 30 balances = 40 calls.
+  // Solana: 10 * (6 base + 1 DLMM pool batch + 5 Jupiter reads) + 3 shared = 123, rounded to 130.
+  // Lite: 10 * 1 = 10. General: 40 + 130 + 10 = 180, the sum of the route ceilings.
+  // A heavier Safe owner sees partial results. Retries also consume route slots.
+  "ratelimits": [
+    { "name": "LIMITER", "namespace_id": "1001", "simple": { "limit": 180, "period": 60 } },
+    { "name": "SAFE_LIMITER", "namespace_id": "1003", "simple": { "limit": 40, "period": 60 } },
+    { "name": "SOLANA_LIMITER", "namespace_id": "1005", "simple": { "limit": 130, "period": 60 } },
+    {
+      "name": "ZKSYNC_LITE_LIMITER",
+      "namespace_id": "1007",
+      "simple": { "limit": 10, "period": 60 },
+    },
+  ],
+  // Automatic invocation logs include caller-controlled URLs. Keep them and traces off.
+  // Application logs remain available, but the app emits no request data or error objects.
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "invocation_logs": false },
+    "traces": { "enabled": false },
+  },
+  "env": {
+    "staging": {
+      "name": "deficheckup-proxy-staging",
+      "workers_dev": true,
+      "preview_urls": false,
+      // Override inherited production routes when the custom domain is configured later.
+      "routes": [],
+      // Variables and bindings are not inherited by named environments.
+      "vars": {
+        "ALLOWED_ORIGINS": "https://deficheckup-web-staging.deficheckup.workers.dev",
+      },
+      "ratelimits": [
+        { "name": "LIMITER", "namespace_id": "1002", "simple": { "limit": 180, "period": 60 } },
+        {
+          "name": "SAFE_LIMITER",
+          "namespace_id": "1004",
+          "simple": { "limit": 40, "period": 60 },
+        },
+        {
+          "name": "SOLANA_LIMITER",
+          "namespace_id": "1006",
+          "simple": { "limit": 130, "period": 60 },
+        },
+        {
+          "name": "ZKSYNC_LITE_LIMITER",
+          "namespace_id": "1008",
+          "simple": { "limit": 10, "period": 60 },
+        },
+      ],
+      // Repeated explicitly even though observability is inheritable.
+      "observability": {
+        "enabled": true,
+        "logs": { "enabled": true, "invocation_logs": false },
+        "traces": { "enabled": false },
+      },
+    },
+  },
+}

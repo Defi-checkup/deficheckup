@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy | DeFi Checkup"
+  description="See who receives your read-only scan requests, how scanning several wallets can link them, and what DeFi Checkup never stores."
+>
+  <article class="page prose stack">
+    <p class="label">PRIVACY · UPDATED 2026-11-02</p>
+    <h1>Your addresses, your choice</h1>
+    <p class="lede">
+      No wallet connection. No signatures. The scan runs in your browser and makes read-only
+      requests to public services.
+    </p>
+    <h2>What you enter</h2>
+    <p>
+      Public EVM or Solana addresses, or ENS names, up to 10 at a time. ENS names are resolved
+      through Ethereum RPC providers before the protocol checks start. Repeated wallets are scanned
+      once.
+    </p>
+    <h2>Who receives requests</h2>
+    <ul>
+      <li>
+        <strong>Public RPC providers:</strong> your browser asks the providers listed in the
+        engine's network configuration for contract state and balances on every EVM network the
+        scanner reads. These requests can contain your address and related smart accounts.
+      </li>
+      <li>
+        <strong>DefiLlama (coins.llama.fi):</strong> receives token contract identifiers to estimate
+        USD values and gas costs. The scanner does not send your wallet address to its price API.
+      </li>
+      <li>
+        <strong>Hyperliquid:</strong> its public API receives your address to look for perpetual,
+        spot, staking and vault balances.
+      </li>
+      <li>
+        <strong>Merkl:</strong> its public API receives your address to look for unclaimed rewards.
+      </li>
+      <li>
+        <strong>GitHub's raw content service:</strong> your browser downloads Uniswap's published
+        claim index and the relevant block of allocations. These file requests do not contain your
+        complete wallet address.
+      </li>
+      <li>
+        <strong>Our proxy:</strong> receives addresses in POST request bodies for zkSync Lite, Safe
+        and Solana. It asks zkSync Lite's eligibility API, Safe's transaction service or Helius's
+        Solana RPC on your behalf. Local development without a Helius key uses Solana's public
+        mainnet RPC. Safe also receives the addresses of any Safes whose balances are read.
+      </li>
+    </ul>
+    <p>
+      Direct providers see your IP address and can see which addresses you query together. Our proxy
+      also sees your IP address and the submitted addresses. Its upstream services see requests from
+      the proxy. Those providers have their own retention policies.
+    </p>
+    <h2>Scanning several wallets can link them</h2>
+    <p>
+      RPC providers and our proxy see addresses scanned together from the same IP. That can link
+      wallets you prefer to keep separate, including wallets used for airdrops. Scanning one wallet
+      at a time avoids this grouping. When you enter several addresses, the scanner shows this
+      warning near Scan. It informs you without requiring an extra click.
+    </p>
+    <h2>What the site never stores</h2>
+    <p>
+      Addresses, ENS names and results stay in the current page's memory. They are never added to
+      the site's URL, cookies, local storage or a database. Reloading the page or using the clear
+      button removes them from the app. Your browser and its extensions may have their own behavior.
+    </p>
+    <p>
+      The app does not use cookies or persistent browser storage to keep your scan. Web analytics
+      and the planned anonymous scan counter are not installed. Cloudflare provides the security
+      checks described below, with its own challenge metrics. Fonts are served from this site.
+    </p>
+    <h2>Browser verification with Cloudflare Turnstile</h2>
+    <p>
+      After you submit valid inputs, Turnstile checks your browser before the scan uses our proxy.
+      Your browser contacts challenges.cloudflare.com, so Cloudflare receives your IP address and
+      browser information. It runs small background checks to collect signals about your browser
+      environment and distinguish people from automated traffic. Cloudflare says Turnstile does not
+      access, store or transmit form entries, communications or other page inputs.
+    </p>
+    <p>
+      We send no wallet address, ENS name or scan result to Turnstile. Our proxy sends only its
+      verification secret and Turnstile's temporary token to Cloudflare's validation service. It
+      does not forward your IP address in that validation request. Cloudflare already receives it
+      through the browser check. Usually the check runs without interaction; Cloudflare may ask you
+      to select a checkbox. There are no image or text puzzles.
+    </p>
+    <p>
+      Turnstile's optional pre-clearance feature can set a cf_clearance cookie. We keep that feature
+      disabled. Our scan pass is a random identifier and an expiry, signed by our proxy, valid for
+      two minutes and kept only in this page's memory. It contains no wallet address or IP address.
+      We do not log or store verification tokens or passes. The same temporary pass accompanies the
+      proxy requests in a scan, so those requests can be associated while they are being processed.
+    </p>
+    <p>
+      Read{' '}
+      <a
+        href="https://developers.cloudflare.com/turnstile/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        how Cloudflare Turnstile works
+      </a>
+      and its{' '}
+      <a
+        href="https://www.cloudflare.com/turnstile-privacy-policy/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Turnstile Privacy Addendum
+      </a>
+      for more information. If verification is blocked, fails or expires, we show a message and
+      proxy checks are reported as not checked. Other checks can still return results.
+    </p>
+    <h2>How the proxy handles data</h2>
+    <p>
+      The proxy does not log addresses, IP addresses, verification tokens or scan passes. Automatic
+      invocation logs and outgoing request traces are disabled. It uses IP addresses for rate
+      limiting. It caches validated eligibility and Safe balance responses for 10 minutes under
+      hashed request keys. Responses can contain public balances and contract addresses. Lists of
+      Safes owned by a wallet are never cached. Solana account responses are never cached either.
+    </p>
+    <p>
+      If the proxy is not configured or is unavailable, its checks report a failure. Other checks
+      can still return findings.
+    </p>
+    <h2>Avoid address poisoning</h2>
+    <p>
+      Always copy addresses from your own wallet, never from a transaction history, and compare them
+      in full. Attackers can place lookalike addresses in your history. Check the official domain
+      before following a recovery guide.
+    </p>
+    <h2>What a scan can tell you</h2>
+    <p>
+      A scan covers only the catalog's supported protocols and markets. A failed or partial check is
+      not evidence that a wallet has nothing. Values and claim costs are estimates. Follow the
+      linked guide and verify the official app before taking action there.
+    </p>
+    <p>
+      The site never asks for a private key, seed phrase, wallet connection or signature, and it
+      never sends transactions.
+    </p>
+    <h2>Protocol names and logos</h2>
+    <p>
+      Protocol names and logos belong to their respective owners. They are used only to identify the
+      protocol and imply no affiliation or endorsement. They are excluded from the MIT and CC BY 4.0
+      licenses. Logos in scan reports are served from this site, without requests to the brands.
+    </p>
+    <p>
+      <a href="/protocols">Read the protocol guides</a> or <a href="/">start a scan</a>.
+    </p>
+  </article>
+</Layout>

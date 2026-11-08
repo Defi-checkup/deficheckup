@@ -1,0 +1,39 @@
+---
+import { checks } from '@deficheckup/catalog';
+import { EVM_NETWORKS } from '@deficheckup/engine';
+import type { Network } from '@deficheckup/engine';
+import Layout from '../layouts/Layout.astro';
+import Scanner from '../components/Scanner';
+import { reportLogoForCheck } from '../lib/protocol-logos';
+
+const checkInfo = checks.map(({ id, name, networks, officialLink }) => ({
+  id,
+  name,
+  networks,
+  officialLink,
+  reportLogo: reportLogoForCheck(id),
+}));
+// Only networks at least one check reads, so the page never lists a network nothing scans.
+const covered = new Set(checks.flatMap((check) => check.networks));
+const networks = ([...Object.keys(EVM_NETWORKS), 'hyperliquid', 'solana'] as Network[]).filter(
+  (network) => covered.has(network),
+);
+---
+
+<Layout>
+  <div class="page">
+    <section class="hero stack" aria-labelledby="home-title">
+      <h1 id="home-title">Find overlooked balances across your wallets.</h1>
+      <p class="lede">
+        Forgotten DeFi positions, unclaimed rewards and balances left behind. Free and read only.
+      </p>
+    </section>
+    <Scanner checks={checkInfo} networks={networks} client:load />
+  </div>
+  <noscript>
+    <p class="page panel">
+      JavaScript is needed to run checks in your browser. You can still read{' '}
+      <a href="/protocols">every protocol guide</a> and our <a href="/privacy">privacy details</a>.
+    </p>
+  </noscript>
+</Layout>

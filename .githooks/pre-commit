@@ -1,0 +1,4 @@
+#!/bin/sh
+# Blocks a commit that contains the maintainer's wallets or em/en dashes.
+# Enabled by `pnpm install` (the "prepare" script sets core.hooksPath).
+exec node scripts/guard.mjs

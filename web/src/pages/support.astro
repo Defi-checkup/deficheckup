@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CopyValue from '../components/CopyValue';
+import { SUPPORT } from '../lib/support';
+---
+
+<Layout
+  title="Support DeFi Checkup"
+  description="DeFi Checkup is free, open source and read only. Optional tips help us add protocols and keep every check up to date."
+>
+  <article class="page stack">
+    <h1>
+      Support DeFi Checkup{' '}
+      <svg
+        class="heart"
+        viewBox="0 0 16 16"
+        width="1em"
+        height="1em"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          fill="currentColor"
+          d="M8 14.2 1.9 8.4A3.7 3.7 0 0 1 7.2 3.2L8 4l.8-.8a3.7 3.7 0 0 1 5.3 5.2Z"
+        />
+      </svg>
+    </h1>
+    <p class="lede">
+      DeFi Checkup is free, open source and read only, with no token and no fees. If it helped you
+      find something, a tip helps us keep going: adding more protocols and keeping every check up to
+      date as they change.
+    </p>
+    <section class="panel stack" aria-labelledby="support-evm">
+      <h2 id="support-evm">Ethereum and EVM networks</h2>
+      <div>
+        <CopyValue value={SUPPORT.ens} label="ENS" client:load />
+      </div>
+      <div>
+        <CopyValue value={SUPPORT.evm} label="EVM address" client:load />
+      </div>
+    </section>
+    <section class="panel stack" aria-labelledby="support-solana">
+      <h2 id="support-solana">Solana</h2>
+      <div>
+        <CopyValue value={SUPPORT.solana} label="Solana address" client:load />
+      </div>
+    </section>
+    <div class="notice stack">
+      <p>
+        Tips are optional. DeFi Checkup never asks for a payment to show or recover your funds, and
+        never asks you to connect a wallet or sign anything.
+      </p>
+      <p>
+        Copy the full address and compare every character before sending. Send SOL and Solana tokens
+        only to the Solana address, and EVM assets only to the EVM address.
+      </p>
+    </div>
+  </article>
+</Layout>

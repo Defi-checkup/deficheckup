@@ -1,0 +1,6 @@
+# Copy to .dev.vars (ignored by git) for `pnpm dev`. Production values are Cloudflare secrets.
+ALLOWED_ORIGINS=http://localhost:4321
+# Optional. Without it, Safe answers with its anonymous quota (5,000 requests a month per IP).
+SAFE_API_KEY=
+# Needed for /solana: the public mainnet RPC blocks Cloudflare Workers, wrangler dev included.
+HELIUS_API_KEY=

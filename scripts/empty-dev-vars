@@ -1,0 +1,1 @@
+# Intentionally empty: offline type generation must never load local secrets.

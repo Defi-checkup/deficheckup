@@ -1,0 +1,18 @@
+{
+  "name": "@deficheckup/proxy",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A small Cloudflare Worker for the few requests a browser cannot make by itself.",
+  "scripts": {
+    "dev": "node ../scripts/proxy-dev.mjs",
+    "types": "wrangler types --env-file ../scripts/empty-dev-vars"
+  },
+  "dependencies": {
+    "@deficheckup/engine": "workspace:*",
+    "hono": "4.13.14"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.0"
+  }
+}

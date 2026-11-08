@@ -1,0 +1,45 @@
+---
+import { checks } from '@deficheckup/catalog';
+import { guideMetadata } from '../../lib/guides';
+import Layout from '../../layouts/Layout.astro';
+import { descriptions, networkNames, statusText } from '../../lib/catalog';
+import { plural } from '../../lib/plural';
+---
+
+<Layout
+  title="Protocol Recovery Guides | DeFi Checkup"
+  description="Explore the DeFi Checkup catalog: supported protocols, overlooked positions and rewards, network coverage, costs and limits."
+>
+  <section class="page stack">
+    <p class="label">
+      THE CATALOG · {checks.length} {plural(checks.length, 'CHECK', 'CHECKS')}
+    </p>
+    <h1>What we look for</h1>
+    <p class="lede">
+      Overlooked positions and rewards that ordinary portfolio trackers can miss. Each check has a
+      guide explaining its coverage, costs and limits.
+    </p>
+    <p class="subtitle">
+      Protocol status describes the app or claim window. An open protocol can still have positions
+      that are lost or unavailable to withdraw.
+    </p>
+    <p>
+      <a href="/closing-soon">Check upcoming recovery deadlines</a>
+    </p>
+    <div class="card-grid">
+      {checks.map((check) => (
+        <article class="panel stack">
+          <h2>
+            <a href={`/protocols/${check.id}/`}>
+              {guideMetadata[check.id]!.title.replace(' | DeFi Checkup', '')}
+            </a>
+          </h2>
+          <p>{descriptions[check.id]}</p>
+          <p class="label">{check.networks.map((network) => networkNames[network]).join(' · ')}</p>
+          <p>{statusText(check.status)}</p>
+          <p class="subtitle">Source verification: {check.verifiedOn}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

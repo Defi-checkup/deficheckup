@@ -1,0 +1,98 @@
+{
+  "recordedOn": "2026-11-02T17:26:41.790Z",
+  "endpoint": "https://ethereum-rpc.publicnode.com",
+  "block": "0x191be04",
+  "owner": "0x1b1d03Bbc0fE2CF701FE12195eBa9d99001e605d",
+  "discovery": {
+    "event": "CollBalanceUpdated",
+    "transaction": "https://etherscan.io/tx/0x91781e53342f740714803e47abb355b9f4d45d8fe61aad1c7935af099bd785fd",
+    "recordedOn": "2026-11-02",
+    "query": {
+      "address": "0x3D32e8b97Ed5881324241Cf03b2DA5E2EBcE5521",
+      "fromBlock": "0x190f784",
+      "toBlock": "0x191bad3",
+      "topics": ["0xf0393a34d05e6567686ad4e097f9d9d2781565957394f1f0d984e5d8e6378f20"]
+    },
+    "totalLogs": 11,
+    "selectedEvent": {
+      "address": "0x3d32e8b97ed5881324241cf03b2da5e2ebce5521",
+      "topics": [
+        "0xf0393a34d05e6567686ad4e097f9d9d2781565957394f1f0d984e5d8e6378f20",
+        "0x0000000000000000000000001b1d03bbc0fe2cf701fe12195eba9d99001e605d"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000005407f8bfa845098b",
+      "blockHash": "0x27e398252e97623ce7c776f6810240e5dfe2b675cb7106fcf2fbc7a93279396a",
+      "blockNumber": "0x191523e",
+      "blockTimestamp": "0x6ae3b5df",
+      "transactionHash": "0x91781e53342f740714803e47abb355b9f4d45d8fe61aad1c7935af099bd785fd",
+      "transactionIndex": "0x3f",
+      "logIndex": "0x14d",
+      "removed": false
+    },
+    "endpoint": "https://ethereum.reth.rs/rpc",
+    "eventQueryEndBlock": "0x191bad3"
+  },
+  "deploymentUrl": "https://raw.githubusercontent.com/liquity/dev/main/packages/lib-ethers/deployments/default/mainnet.json",
+  "contracts": [
+    {
+      "address": "0x3D32e8b97Ed5881324241Cf03b2DA5E2EBcE5521",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x3D32e8b97Ed5881324241Cf03b2DA5E2EBcE5521?fields=all",
+      "match": "exact_match",
+      "name": "CollSurplusPool",
+      "codeBytes": 2874,
+      "codeSha256": "36c09dc7f7c1f9332c4837df0eef44f0e2258202157d109c63ddc2def467892e",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    },
+    {
+      "address": "0x24179CD81c9e782A4096035f7eC97fB8B783e007",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x24179CD81c9e782A4096035f7eC97fB8B783e007?fields=all",
+      "match": "match",
+      "name": "BorrowerOperations",
+      "codeBytes": 14129,
+      "codeSha256": "49fdad208eec11685f3f72ee4da8ab5fb4736bf985d45f5b577c29c4f42d14c8",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    }
+  ],
+  "reads": [
+    {
+      "to": "0x3D32e8b97Ed5881324241Cf03b2DA5E2EBcE5521",
+      "signature": "function getCollateral(address) view returns(uint256)",
+      "args": ["0x1b1d03Bbc0fE2CF701FE12195eBa9d99001e605d"],
+      "result": "6055081726068459915",
+      "raw": "0x0000000000000000000000000000000000000000000000005407f8bfa845098b"
+    },
+    {
+      "to": "0x3D32e8b97Ed5881324241Cf03b2DA5E2EBcE5521",
+      "signature": "function getETH() view returns(uint256)",
+      "args": [],
+      "result": "2245871006899286676487",
+      "raw": "0x000000000000000000000000000000000000000000000079bfb8a5a3ecd99407"
+    },
+    {
+      "to": "0x3D32e8b97Ed5881324241Cf03b2DA5E2EBcE5521",
+      "signature": "function borrowerOperationsAddress() view returns(address)",
+      "args": [],
+      "result": "0x24179CD81c9e782A4096035f7eC97fB8B783e007",
+      "raw": "0x00000000000000000000000024179cd81c9e782a4096035f7ec97fb8b783e007"
+    },
+    {
+      "to": "0x24179CD81c9e782A4096035f7eC97fB8B783e007",
+      "signature": "function claimCollateral()",
+      "args": [],
+      "from": "0x1b1d03Bbc0fE2CF701FE12195eBa9d99001e605d",
+      "raw": "0x"
+    }
+  ],
+  "notes": [
+    "All state reads and simulations in reads use the explicit block shown above. No transaction was sent.",
+    "codeSha256 hashes the decoded eth_getCode bytes, not the hexadecimal text."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "../proxy/node_modules/wrangler/config-schema.json",
+  "name": "deficheckup-web",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": false,
+  "preview_urls": false,
+  // Production host. www redirects to the apex through a zone rule.
+  "routes": [{ "pattern": "deficheckup.com", "custom_domain": true }],
+  // Astro prerenders everything. Static assets need neither main nor an assets binding.
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "none",
+  },
+  "observability": {
+    "enabled": false,
+    "logs": { "enabled": false, "invocation_logs": false },
+    "traces": { "enabled": false },
+  },
+  "env": {
+    "staging": {
+      "name": "deficheckup-web-staging",
+      "workers_dev": true,
+      "preview_urls": false,
+      "routes": [],
+      // Assets are inheritable, but repeat the complete hosting contract explicitly.
+      "assets": {
+        "directory": "./dist",
+        "html_handling": "drop-trailing-slash",
+        "not_found_handling": "none",
+      },
+      "observability": {
+        "enabled": false,
+        "logs": { "enabled": false, "invocation_logs": false },
+        "traces": { "enabled": false },
+      },
+    },
+  },
+}

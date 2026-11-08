@@ -1,0 +1,78 @@
+---
+import { checks } from '@deficheckup/catalog';
+import { closingSoon, utcToday } from '../../../catalog/deadlines';
+import Layout from '../layouts/Layout.astro';
+import { networkNames } from '../lib/catalog';
+
+const today = utcToday(new Date());
+const { upcoming, expired } = closingSoon(checks, today);
+const byId = new Map(checks.map((check) => [check.id, check]));
+---
+
+<Layout
+  title="Closing Soon: Recovery Deadlines | DeFi Checkup"
+  description="See recorded recovery deadlines in the DeFi Checkup catalog, ordered by date, plus recently expired windows. Check each guide and confirm the official deadline."
+>
+  <section class="page stack">
+    <p class="label">
+      CATALOG DEADLINES · BUILT <time datetime={today}>{today}</time> UTC
+    </p>
+    <h1>Closing soon</h1>
+    <p class="lede">
+      Recorded recovery deadlines, ordered by date. This page is generated when the site is built.
+      Confirm the deadline in the protocol's official guidance before taking action.
+    </p>
+    <p class="subtitle">
+      Dates include the stated UTC day. A missing deadline means none is recorded in our catalog; it
+      does not guarantee that recovery will stay available.
+    </p>
+    <section class="stack" aria-labelledby="upcoming-deadlines">
+      <h2 id="upcoming-deadlines">Upcoming deadlines</h2>
+      {upcoming.length === 0 ? (
+        <p class="panel">
+          No upcoming recovery deadlines are recorded in the catalog as of {today} (UTC).
+        </p>
+      ) : (
+        upcoming.map(({ check, deadline }) => (
+          <article class="panel stack">
+            <h3>
+              <a href={`/protocols/${check.id}/`}>{check.name}</a>
+            </h3>
+            <p>
+              Deadline: <time datetime={deadline}>{deadline}</time> (UTC)
+            </p>
+            <p class="label">
+              {byId
+                .get(check.id)!
+                .networks.map((network) => networkNames[network])
+                .join(' · ')}
+            </p>
+            <p class="subtitle">Source verification: {check.verifiedOn}</p>
+          </article>
+        ))
+      )}
+    </section>
+    <section class="stack" aria-labelledby="expired-deadlines">
+      <h2 id="expired-deadlines">Recently expired</h2>
+      <p class="subtitle">Recovery deadlines from the past 30 UTC calendar days.</p>
+      {expired.length === 0 ? (
+        <p>No recorded recovery deadlines expired in the past 30 days.</p>
+      ) : (
+        expired.map(({ check, deadline }) => (
+          <article class="panel stack">
+            <h3>
+              <a href={`/protocols/${check.id}/`}>{check.name}</a>
+            </h3>
+            <p>
+              Expired: <time datetime={deadline}>{deadline}</time> (UTC)
+            </p>
+            <p class="subtitle">
+              The recorded recovery window has ended. Read the guide for its limits.
+            </p>
+          </article>
+        ))
+      )}
+    </section>
+    <a href="/protocols">Explore all protocol guides</a>
+  </section>
+</Layout>

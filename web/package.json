@@ -1,0 +1,32 @@
+{
+  "name": "@deficheckup/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build && node scripts/verify-seo.mjs && node ../scripts/measure-web.mjs",
+    "preview": "astro preview --host 127.0.0.1",
+    "typecheck": "astro check",
+    "lighthouse": "pnpm build && node scripts/lighthouse.mjs"
+  },
+  "dependencies": {
+    "@astrojs/react": "7.1.2",
+    "@deficheckup/catalog": "workspace:*",
+    "@deficheckup/engine": "workspace:*",
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource-variable/geist": "5.3.0",
+    "@fontsource-variable/geist-mono": "5.3.0",
+    "astro": "7.4.4",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "fontkitten": "1.0.3",
+    "lighthouse": "13.5.0",
+    "sharp": "0.35.5"
+  }
+}

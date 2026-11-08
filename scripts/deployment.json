@@ -1,0 +1,14 @@
+{
+  "stagingWebUrl": "https://deficheckup-web-staging.deficheckup.workers.dev",
+  "stagingProxyUrl": "https://deficheckup-proxy-staging.deficheckup.workers.dev",
+  "turnstile": {
+    "staging": {
+      "siteKey": "0x4AAAAAAF5ELpbwcAjXqvKv",
+      "workerSecrets": "configured-in-worker"
+    },
+    "production": {
+      "siteKey": "0x4AAAAAAF5EOtzo1Ub4d-RQ",
+      "workerSecrets": "configured-in-worker"
+    }
+  }
+}

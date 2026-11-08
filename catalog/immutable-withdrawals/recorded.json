@@ -1,0 +1,251 @@
+{
+  "recordedOn": "2026-11-02T17:34:04.463Z",
+  "endpoint": "https://ethereum-rpc.publicnode.com",
+  "block": "0x191be28",
+  "owner": "0x94549af71a13D91f268992024700DB640c950ab1",
+  "discovery": {
+    "event": "LogWithdrawalAllowed",
+    "transaction": "https://etherscan.io/tx/0x30bc5e648845672dc019a42faa47b29bb6db8c2515c6470dd3073d5fc251e496",
+    "recordedOn": "2026-11-02",
+    "endpoint": "https://ethereum.reth.rs/rpc",
+    "query": {
+      "address": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "fromBlock": "0x1745080",
+      "toBlock": "0x175d71f",
+      "topics": ["0x03c10a82c955f7bcd0c934147fb39cafca947a4294425b1751d884c8ac954287"]
+    },
+    "totalLogs": 75,
+    "selectedEvent": {
+      "address": "0x5fdcca53617f4d2b9134b29090c87d01058e27e9",
+      "topics": ["0x03c10a82c955f7bcd0c934147fb39cafca947a4294425b1751d884c8ac954287"],
+      "data": "0x00000000000000000000000094549af71a13d91f268992024700db640c950ab102705737cd248ac819034b5de474c8f0368224f72a0fda9e031499d519992d9e000000000000000000000000000000000000000000000000000336080adc9b00000000000000000000000000000000000000000000000000000000000089e9fb",
+      "blockHash": "0xcba69821b2e8eed3cf1f99d08aed03cbf73654ef95fe9c4e04b63cabb7849f3a",
+      "blockNumber": "0x175c69d",
+      "blockTimestamp": "0x6997e797",
+      "transactionHash": "0x30bc5e648845672dc019a42faa47b29bb6db8c2515c6470dd3073d5fc251e496",
+      "transactionIndex": "0x50",
+      "logIndex": "0x1f0",
+      "removed": false
+    }
+  },
+  "official": "https://raw.githubusercontent.com/immutable/imx-migration-contracts/main/docs/finalise-pending-withdrawals.md",
+  "assets": [
+    {
+      "symbol": "ETH",
+      "token": "native",
+      "assetId": "1103114524755001640548555873671808205895038091681120606634696969331999845790"
+    },
+    {
+      "symbol": "IMX",
+      "token": "0xf57e7e7c23978c3caec3c3548e3d615c346e79ff",
+      "assetId": "88914301944088089141574999348394996493546404963067902156417732601144566237"
+    },
+    {
+      "symbol": "USDC",
+      "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "assetId": "1147032829293317481173155891309375254605214077236177772270270553197624560221"
+    }
+  ],
+  "contracts": [
+    {
+      "address": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x5FDCCA53617f4d2b9134B29090C87D01058e27e9?fields=all",
+      "match": "match",
+      "name": "Proxy",
+      "codeBytes": 5720,
+      "codeSha256": "de7b61a7f21240dcf80119338f61c50acde57b093e36882aa23aa6c57fbf318e",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    },
+    {
+      "address": "0x273b65a7231321D4ee47a4c47408Ef43517455Ec",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x273b65a7231321D4ee47a4c47408Ef43517455Ec?fields=all",
+      "match": "exact_match",
+      "name": "StarkExchangeMigrationV2",
+      "codeBytes": 23142,
+      "codeSha256": "1e4042bfa14be94194a4a93a18344483021fc36e6c2dec3b4e9426f209af199d",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    },
+    {
+      "address": "0xf57e7e7c23978c3caec3c3548e3d615c346e79ff",
+      "url": "https://sourcify.dev/server/v2/contract/1/0xf57e7e7c23978c3caec3c3548e3d615c346e79ff?fields=all",
+      "match": "match",
+      "name": "IMXToken",
+      "codeBytes": 4317,
+      "codeSha256": "6f0379008d51c223914429a42c2de5eedd8a3d5157124d47a3a470558bb03e40",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    },
+    {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "url": "https://sourcify.dev/server/v2/contract/1/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?fields=all",
+      "match": "match",
+      "name": "FiatTokenProxy",
+      "codeBytes": 2186,
+      "codeSha256": "c1bcd4dc4f30c4dcf6c9fe462abeaf2efefc065dcb4dec74996e471f1ce219b4",
+      "proxyResolution": {
+        "isProxy": true,
+        "proxyType": "ZeppelinOSProxy",
+        "implementations": [
+          {
+            "address": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
+            "name": "FiatTokenV2_2"
+          }
+        ]
+      }
+    },
+    {
+      "address": "0x43506849D7C04F9138D1A2050bbF3A0c054402dd",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x43506849D7C04F9138D1A2050bbF3A0c054402dd?fields=all",
+      "match": "match",
+      "name": "FiatTokenV2_2",
+      "codeBytes": 23464,
+      "codeSha256": "21a831a7cff1a353b295490f43a66e48e55d1c76c60cd89b24138efd8e8b7c8a",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    }
+  ],
+  "reads": [
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function implementation() view returns(address)",
+      "args": [],
+      "result": "0x273b65a7231321D4ee47a4c47408Ef43517455Ec",
+      "raw": "0x000000000000000000000000273b65a7231321d4ee47a4c47408ef43517455ec"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getEthKey(uint256) view returns(address)",
+      "args": ["846817396055045927761782097276187168056284613297"],
+      "result": "0x94549af71a13D91f268992024700DB640c950ab1",
+      "raw": "0x00000000000000000000000094549af71a13d91f268992024700db640c950ab1"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getAssetInfo(uint256) view returns(bytes)",
+      "args": ["1103114524755001640548555873671808205895038091681120606634696969331999845790"],
+      "result": "0x8322fff2",
+      "raw": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000048322fff200000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getWithdrawalBalance(uint256,uint256) view returns(uint256)",
+      "args": [
+        "846817396055045927761782097276187168056284613297",
+        "1103114524755001640548555873671808205895038091681120606634696969331999845790"
+      ],
+      "result": "903833100000000",
+      "raw": "0x000000000000000000000000000000000000000000000000000336080adc9b00"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getQuantum(uint256) view returns(uint256)",
+      "args": ["1103114524755001640548555873671808205895038091681120606634696969331999845790"],
+      "result": "100000000",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000005f5e100"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getWithdrawalBalance(uint256,uint256) view returns(uint256)",
+      "args": [
+        "846817396055045927761782097276187168056284613297",
+        "88914301944088089141574999348394996493546404963067902156417732601144566237"
+      ],
+      "result": "0",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getAssetInfo(uint256) view returns(bytes)",
+      "args": ["88914301944088089141574999348394996493546404963067902156417732601144566237"],
+      "result": "0xf47261b0000000000000000000000000f57e7e7c23978c3caec3c3548e3d615c346e79ff",
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000024f47261b0000000000000000000000000f57e7e7c23978c3caec3c3548e3d615c346e79ff00000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getQuantum(uint256) view returns(uint256)",
+      "args": ["88914301944088089141574999348394996493546404963067902156417732601144566237"],
+      "result": "100000000",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000005f5e100"
+    },
+    {
+      "to": "0xf57e7e7c23978c3caec3c3548e3d615c346e79ff",
+      "signature": "function decimals() view returns(uint8)",
+      "args": [],
+      "result": 18,
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    },
+    {
+      "to": "0xf57e7e7c23978c3caec3c3548e3d615c346e79ff",
+      "signature": "function symbol() view returns(string)",
+      "args": [],
+      "result": "IMX",
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000003494d580000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getAssetInfo(uint256) view returns(bytes)",
+      "args": ["1147032829293317481173155891309375254605214077236177772270270553197624560221"],
+      "result": "0xf47261b0000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000024f47261b0000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getWithdrawalBalance(uint256,uint256) view returns(uint256)",
+      "args": [
+        "846817396055045927761782097276187168056284613297",
+        "1147032829293317481173155891309375254605214077236177772270270553197624560221"
+      ],
+      "result": "0",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function getQuantum(uint256) view returns(uint256)",
+      "args": ["1147032829293317481173155891309375254605214077236177772270270553197624560221"],
+      "result": "1",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "signature": "function decimals() view returns(uint8)",
+      "args": [],
+      "result": 6,
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000006"
+    },
+    {
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "signature": "function symbol() view returns(string)",
+      "args": [],
+      "result": "USDC",
+      "raw": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000045553444300000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x5FDCCA53617f4d2b9134B29090C87D01058e27e9",
+      "signature": "function withdraw(uint256,uint256)",
+      "args": [
+        "846817396055045927761782097276187168056284613297",
+        "1103114524755001640548555873671808205895038091681120606634696969331999845790"
+      ],
+      "from": "0x94549af71a13D91f268992024700DB640c950ab1",
+      "raw": "0x"
+    }
+  ],
+  "notes": [
+    "All state reads and simulations in reads use the explicit block shown above. No transaction was sent.",
+    "codeSha256 hashes the decoded eth_getCode bytes, not the hexadecimal text."
+  ]
+}

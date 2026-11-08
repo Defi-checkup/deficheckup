@@ -1,0 +1,120 @@
+{
+  "recordedOn": "2026-11-02T17:26:33.733Z",
+  "endpoint": "https://ethereum-rpc.publicnode.com",
+  "block": "0x191be03",
+  "owner": "0xBE7EE9e0d3d0Ed452F2b6C284C5841E8EaDF236F",
+  "discovery": {
+    "method": "getLastFinalizedRequestId then getWithdrawalStatus",
+    "requestId": "140174",
+    "recordedOn": "2026-11-02",
+    "lastFinalizedId": "140174",
+    "rangeSize": 30,
+    "endpoint": "https://ethereum-rpc.publicnode.com",
+    "blockTag": "latest",
+    "source": "https://sourcify.dev/server/v2/contract/1/0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1?fields=all"
+  },
+  "contracts": [
+    {
+      "address": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "url": "https://sourcify.dev/server/v2/contract/1/0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1?fields=all",
+      "match": "exact_match",
+      "name": "OssifiableProxy",
+      "codeBytes": 2497,
+      "codeSha256": "6490ced9ee4f0d8815f8c24a7d40acb40cb27cd7ef0fdab57289406d7ef96abc",
+      "proxyResolution": {
+        "isProxy": true,
+        "proxyType": "EIP1967Proxy",
+        "implementations": [
+          {
+            "address": "0xE42C659Dc09109566720EA8b2De186c2Be7D94D9",
+            "name": "WithdrawalQueueERC721"
+          }
+        ]
+      }
+    },
+    {
+      "address": "0xE42C659Dc09109566720EA8b2De186c2Be7D94D9",
+      "url": "https://sourcify.dev/server/v2/contract/1/0xE42C659Dc09109566720EA8b2De186c2Be7D94D9?fields=all",
+      "match": "exact_match",
+      "name": "WithdrawalQueueERC721",
+      "codeBytes": 24190,
+      "codeSha256": "95501f0f9cdc2f936c2c26dc1a0ac3a6b9409b57d562cf715af2837749d203d6",
+      "proxyResolution": {
+        "isProxy": false,
+        "proxyType": null,
+        "implementations": []
+      }
+    }
+  ],
+  "reads": [
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function balanceOf(address) view returns(uint256)",
+      "args": ["0xBE7EE9e0d3d0Ed452F2b6C284C5841E8EaDF236F"],
+      "result": "1",
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function proxy__getImplementation() view returns(address)",
+      "args": [],
+      "result": "0xE42C659Dc09109566720EA8b2De186c2Be7D94D9",
+      "raw": "0x000000000000000000000000e42c659dc09109566720ea8b2de186c2be7d94d9"
+    },
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function getLastCheckpointIndex() view returns(uint256)",
+      "args": [],
+      "result": "1267",
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000004f3"
+    },
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function getWithdrawalRequests(address) view returns(uint256[])",
+      "args": ["0xBE7EE9e0d3d0Ed452F2b6C284C5841E8EaDF236F"],
+      "result": ["140174"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000002238e"
+    },
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function getWithdrawalStatus(uint256[]) view returns((uint256 amountOfStETH,uint256 amountOfShares,address owner,uint256 timestamp,bool isFinalized,bool isClaimed)[])",
+      "args": [["140174"]],
+      "result": [
+        {
+          "amountOfStETH": "30134264486219968",
+          "amountOfShares": "24146126416941977",
+          "owner": "0xBE7EE9e0d3d0Ed452F2b6C284C5841E8EaDF236F",
+          "timestamp": "1793370167",
+          "isFinalized": true,
+          "isClaimed": false
+        }
+      ],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000006b0ef43244d0c00000000000000000000000000000000000000000000000000055c8c627c89399000000000000000000000000be7ee9e0d3d0ed452f2b6c284c5841e8eadf236f000000000000000000000000000000000000000000000000000000006ae4a83700000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function findCheckpointHints(uint256[],uint256,uint256) view returns(uint256[])",
+      "args": [["140174"], "1", "1267"],
+      "result": ["1267"],
+      "raw": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000004f3"
+    },
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function getClaimableEther(uint256[],uint256[]) view returns(uint256[])",
+      "args": [["140174"], ["1267"]],
+      "result": ["30134264486219968"],
+      "raw": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000006b0ef43244d0c0"
+    },
+    {
+      "to": "0x889edC2eDab5f40e902b864aD4d7AdE8E412F9B1",
+      "signature": "function claimWithdrawal(uint256)",
+      "args": ["140174"],
+      "from": "0xBE7EE9e0d3d0Ed452F2b6C284C5841E8EaDF236F",
+      "raw": "0x"
+    }
+  ],
+  "notes": [
+    "All state reads and simulations in reads use the explicit block shown above. No transaction was sent.",
+    "codeSha256 hashes the decoded eth_getCode bytes, not the hexadecimal text."
+  ]
+}

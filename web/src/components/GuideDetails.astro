@@ -1,0 +1,33 @@
+---
+import type { Check } from '@deficheckup/engine';
+import { networkNames, statusText } from '../lib/catalog';
+interface Props {
+  check: Check;
+  verifiedOn: string;
+}
+const { check, verifiedOn } = Astro.props;
+---
+
+<div class="panel stack">
+  <p class="label">{check.networks.map((network) => networkNames[network]).join(' · ')}</p>
+  <p>
+    {statusText(check.status)} · Guide verified <time datetime={verifiedOn}>{verifiedOn}</time>
+  </p>
+  <p class="notice">
+    Avoid address poisoning: copy addresses from your own wallet, never transaction history, and
+    compare the entire address before using an official app.
+  </p>
+  <a href={check.officialLink} target="_blank" rel="noopener noreferrer">
+    {check.networks.includes('solana') ? 'Read official guidance' : 'Open the official app'}
+  </a>
+</div>
+
+<style>
+  /* Keep the shared panel spacing when it follows the answer inside an illustrated article. */
+  .panel > p {
+    margin-top: 0;
+  }
+  .panel > * + * {
+    margin-top: var(--s5);
+  }
+</style>

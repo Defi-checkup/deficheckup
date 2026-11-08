@@ -1,0 +1,16 @@
+packages:
+  - engine
+  - catalog
+  - web
+  - proxy
+
+# Supply chain: ignore package versions published less than 3 days ago.
+minimumReleaseAge: 4320
+
+savePrefix: ''
+
+# Install scripts allowed only for the Worker toolchain: esbuild (wrangler's bundler) and workerd
+# (Cloudflare's runtime, used by `wrangler dev`). Everything else stays blocked.
+allowBuilds:
+  esbuild: true
+  workerd: true

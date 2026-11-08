@@ -1,0 +1,42 @@
+{
+  "name": "deficheckup",
+  "private": true,
+  "type": "module",
+  "description": "Find overlooked balances across your wallets. No wallet connection. No signatures.",
+  "license": "MIT",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json && pnpm --filter @deficheckup/proxy --silent types > /dev/null && tsc -p proxy/tsconfig.json && pnpm --filter @deficheckup/web typecheck && tsc -p tests/e2e/tsconfig.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:live": "vitest run --config vitest.live.config.ts",
+    "guard": "node scripts/guard.mjs",
+    "maintenance": "tsx scripts/maintenance.ts",
+    "build": "pnpm -r --if-present build",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm guard",
+    "prepare": "git config core.hooksPath .githooks || true",
+    "test:e2e": "playwright test",
+    "deploy:staging": "tsx scripts/deploy.ts staging",
+    "deploy:production": "tsx scripts/deploy.ts production"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.6",
+    "eslint": "10.13.0",
+    "eslint-plugin-astro": "3.2.1",
+    "globals": "17.13.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1",
+    "vitest": "5.0.5"
+  }
+}

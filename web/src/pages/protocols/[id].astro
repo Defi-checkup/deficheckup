@@ -1,0 +1,98 @@
+---
+import { checks } from '@deficheckup/catalog';
+import type { Check } from '@deficheckup/engine';
+import type { MarkdownInstance } from 'astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import GuideDetails from '../../components/GuideDetails.astro';
+import { artForGuide, splitGuideIntro } from '../../lib/guide-art';
+import { guideMetadata, guideStructuredData, serializeJsonLd } from '../../lib/guides';
+
+export function getStaticPaths() {
+  return checks.map((check) => ({ params: { id: check.id }, props: { check } }));
+}
+interface Props {
+  check: Check;
+}
+const { check } = Astro.props;
+const guides = import.meta.glob<MarkdownInstance<Record<string, never>>>(
+  '../../../../catalog/*/guide.en.md',
+);
+const loadGuide = guides[`../../../../catalog/${check.id}/guide.en.md`];
+if (!loadGuide) throw new Error(`Missing guide for ${check.id}.`);
+const { Content, getHeadings, compiledContent } = await loadGuide();
+const metadata = guideMetadata[check.id]!;
+const heading = getHeadings().find(({ depth }) => depth === 1)!.text;
+const structuredData = guideStructuredData(check.id, heading, Astro.site!);
+const art = artForGuide(check.id);
+const images = import.meta.glob<ImageMetadata>('../../assets/guide-art/*.webp', {
+  eager: true,
+  import: 'default',
+});
+const source = art && images[`../../assets/guide-art/${art.file}`];
+if (art && !source) throw new Error(`Missing illustration for ${check.id}.`);
+const parts = art ? splitGuideIntro(await compiledContent()) : undefined;
+---
+
+<Layout
+  title={metadata.title}
+  description={metadata.description}
+  image={`/social/${check.id}.png`}
+  article
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={serializeJsonLd(structuredData)}
+  />
+  <div class="page stack">
+    <nav aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <a href="/protocols">Protocols</a>
+    </nav>
+    {art && source && parts ? (
+      <article class="prose illustrated-guide">
+        <div class="guide-intro" set:html={parts.intro} />
+        <GuideDetails check={check} verifiedOn={metadata.verifiedOn} />
+        <div class="panel guide-art">
+          <Image
+            src={source}
+            alt={art.alt}
+            width={1376}
+            height={768}
+            widths={[344, 688, 1032, 1376]}
+            sizes="(max-width: 400px) calc(100vw - 66px), (max-width: 935px) calc(92vw - 34px), 826px"
+            format="webp"
+            quality={80}
+            loading="eager"
+            decoding="async"
+            class="guide-hero"
+          />
+        </div>
+        <Fragment set:html={parts.rest} />
+      </article>
+    ) : (
+      <>
+        <GuideDetails check={check} verifiedOn={metadata.verifiedOn} />
+        <article class="prose">
+          <Content />
+        </article>
+      </>
+    )}
+    <a href="/">Back to the scanner</a>
+  </div>
+</Layout>
+
+<style>
+  .illustrated-guide > :global(.panel) {
+    margin-top: var(--s5);
+  }
+  .guide-art :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-card);
+  }
+</style>

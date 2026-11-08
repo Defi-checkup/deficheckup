@@ -1,0 +1,136 @@
+{
+  "source": "Public token approve transaction 53xpKVXoqaTyqYxupPm1mbJmVshNJjPvAN31VGAiqDgHXso6jLsKwyo3hh359JT1xDLPBXc9RGdHGd8N1LXiv7NN, mainnet data recorded 2026-11-01.",
+  "address": "BZ2Xivthz6aPSrZKSvuwNstwMqsuZKRaFxYBXw3epmSJ",
+  "tokens": {
+    "context": {
+      "slot": 464264007
+    },
+    "value": [
+      {
+        "pubkey": "3wEoRxuNsr3k6MQTeZk5HFByZhzZ5AMkxEGP4nt4e6Xu",
+        "account": {
+          "lamports": 1488440,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "executable": false,
+          "data": {
+            "program": "spl-token",
+            "parsed": {
+              "info": {
+                "isNative": false,
+                "mint": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+                "owner": "BZ2Xivthz6aPSrZKSvuwNstwMqsuZKRaFxYBXw3epmSJ",
+                "state": "initialized",
+                "tokenAmount": {
+                  "amount": "0",
+                  "decimals": 8,
+                  "uiAmount": 0,
+                  "uiAmountString": "0"
+                }
+              },
+              "type": "account"
+            },
+            "space": 165
+          }
+        }
+      },
+      {
+        "pubkey": "69E9g6kz6Ds7VsnM88FijVXw1iaGhQSHvHLLzdTtHRos",
+        "account": {
+          "lamports": 1488440,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "executable": false,
+          "data": {
+            "program": "spl-token",
+            "parsed": {
+              "info": {
+                "isNative": false,
+                "mint": "pSo1f9nQXWgXibFtKf7NWYxb5enAM4qfP6UJSiXRQfL",
+                "owner": "BZ2Xivthz6aPSrZKSvuwNstwMqsuZKRaFxYBXw3epmSJ",
+                "state": "initialized",
+                "tokenAmount": {
+                  "amount": "16145",
+                  "decimals": 9,
+                  "uiAmount": 0.000016145,
+                  "uiAmountString": "0.000016145"
+                }
+              },
+              "type": "account"
+            },
+            "space": 165
+          }
+        }
+      }
+    ]
+  },
+  "tokens2022": {
+    "context": {
+      "slot": 464264007
+    },
+    "value": [
+      {
+        "pubkey": "2Rci5WPnoS6zTZ9ai2u3iiVe3B6HnJ6A91RaUga94uFJ",
+        "account": {
+          "lamports": 1513840,
+          "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+          "executable": false,
+          "data": {
+            "program": "spl-token-2022",
+            "parsed": {
+              "info": {
+                "extensions": [
+                  {
+                    "extension": "immutableOwner"
+                  }
+                ],
+                "isNative": false,
+                "mint": "ExxzYBTt3jwU5MUxuw2F4toYbTLdFwThSjyaCn6Xpump",
+                "owner": "BZ2Xivthz6aPSrZKSvuwNstwMqsuZKRaFxYBXw3epmSJ",
+                "state": "initialized",
+                "tokenAmount": {
+                  "amount": "3448386749454",
+                  "decimals": 6,
+                  "uiAmount": 3448386.749454,
+                  "uiAmountString": "3448386.749454"
+                }
+              },
+              "type": "account"
+            },
+            "space": 170
+          }
+        }
+      },
+      {
+        "pubkey": "HnsCDWargM2tdM6o9h1rwH2YNSpmfQAa5C4V5VMm3hoL",
+        "account": {
+          "lamports": 1513840,
+          "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+          "executable": false,
+          "data": {
+            "program": "spl-token-2022",
+            "parsed": {
+              "info": {
+                "extensions": [
+                  {
+                    "extension": "immutableOwner"
+                  }
+                ],
+                "isNative": false,
+                "mint": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+                "owner": "BZ2Xivthz6aPSrZKSvuwNstwMqsuZKRaFxYBXw3epmSJ",
+                "state": "initialized",
+                "tokenAmount": {
+                  "amount": "844871984040",
+                  "decimals": 6,
+                  "uiAmount": 844871.98404,
+                  "uiAmountString": "844871.98404"
+                }
+              },
+              "type": "account"
+            },
+            "space": 170
+          }
+        }
+      }
+    ]
+  }
+}

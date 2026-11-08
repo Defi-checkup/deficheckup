@@ -1,0 +1,257 @@
+{
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "date": "2026-11-02",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getProgramAccounts",
+    "params": [
+      "LocpQgucEQHbqNABEYvBvwoxCPsSbG91A1QaQhQQqjn",
+      {
+        "encoding": "base64",
+        "commitment": "finalized",
+        "withContext": true,
+        "filters": [
+          {
+            "dataSize": 296
+          },
+          {
+            "memcmp": {
+              "offset": 8,
+              "bytes": "4uzjQgT6MqxWRNwxnR4dA5U3FLSeeMKjMH8rxgNPyVp"
+            }
+          },
+          {
+            "memcmp": {
+              "offset": 0,
+              "bytes": "hteFiUjrzUz"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "slot": 464450802,
+        "apiVersion": "4.3.0-beta.2"
+      },
+      "value": [
+        {
+          "pubkey": "9qykw2QbfpoYkxZoafzaEr2hiJRkGea1eEaXvpfEU8RW",
+          "account": {
+            "lamports": 2951040,
+            "data": [
+              "9He3BEl0h8MBAKobNFK9ZP7cz8vNhe0xocAyQIb+M9Ctzsra34Bkx7wHxW5grT0/F3OC6sZUj7of0yz9kMoCs+fPoYX9znOYAQCqGzRSvWT+3M/LzYXtMaHAMkCG/jPQrc7K2t+AZMcGnMUQ7g+wgSThitanENWMljCU4nHXflIAyDEEBknOAP8AAAAAAAAAr83/ZgAAAACAM+EBAAAAAAAAAAAAAAAAQAXdJwYAAAABAAAAAAAAAAAAAAAAAAAAr83/ZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+              "base64"
+            ],
+            "owner": "LocpQgucEQHbqNABEYvBvwoxCPsSbG91A1QaQhQQqjn",
+            "executable": false,
+            "rentEpoch": 18446744073709551615,
+            "space": 296
+          }
+        }
+      ]
+    },
+    "id": 1
+  },
+  "address": "4uzjQgT6MqxWRNwxnR4dA5U3FLSeeMKjMH8rxgNPyVp",
+  "provenance": {
+    "rpc": "https://api.mainnet-beta.solana.com",
+    "date": "2026-11-02",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getProgramAccounts",
+      "params": [
+        "LocpQgucEQHbqNABEYvBvwoxCPsSbG91A1QaQhQQqjn",
+        {
+          "encoding": "base64",
+          "commitment": "finalized",
+          "withContext": true,
+          "filters": [
+            {
+              "dataSize": 296
+            },
+            {
+              "memcmp": {
+                "offset": 8,
+                "bytes": "5R"
+              }
+            },
+            {
+              "memcmp": {
+                "offset": 0,
+                "bytes": "hteFiUjrzUz"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "slot": 464450489,
+    "selectionOnly": true,
+    "matchingAccounts": 2,
+    "selectedAccount": {
+      "pubkey": "9qykw2QbfpoYkxZoafzaEr2hiJRkGea1eEaXvpfEU8RW",
+      "account": {
+        "lamports": 2951040,
+        "data": [
+          "9He3BEl0h8MBAKobNFK9ZP7cz8vNhe0xocAyQIb+M9Ctzsra34Bkx7wHxW5grT0/F3OC6sZUj7of0yz9kMoCs+fPoYX9znOYAQCqGzRSvWT+3M/LzYXtMaHAMkCG/jPQrc7K2t+AZMcGnMUQ7g+wgSThitanENWMljCU4nHXflIAyDEEBknOAP8AAAAAAAAAr83/ZgAAAACAM+EBAAAAAAAAAAAAAAAAQAXdJwYAAAABAAAAAAAAAAAAAAAAAAAAr83/ZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "base64"
+        ],
+        "owner": "LocpQgucEQHbqNABEYvBvwoxCPsSbG91A1QaQhQQqjn",
+        "executable": false,
+        "rentEpoch": 18446744073709551615,
+        "space": 296
+      }
+    }
+  },
+  "tokens": {
+    "rpc": "https://api.mainnet-beta.solana.com",
+    "date": "2026-11-02",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getTokenAccountsByOwner",
+      "params": [
+        "9qykw2QbfpoYkxZoafzaEr2hiJRkGea1eEaXvpfEU8RW",
+        {
+          "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "encoding": "jsonParsed",
+          "commitment": "finalized"
+        }
+      ]
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "result": {
+        "context": {
+          "slot": 464450804,
+          "apiVersion": "4.3.0-beta.2"
+        },
+        "value": [
+          {
+            "pubkey": "EKabpxbGF4peK6zx3zpBSad7PuVphDAS9oH11QjH7fFn",
+            "account": {
+              "lamports": 2039280,
+              "data": {
+                "program": "spl-token",
+                "parsed": {
+                  "info": {
+                    "isNative": false,
+                    "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+                    "owner": "9qykw2QbfpoYkxZoafzaEr2hiJRkGea1eEaXvpfEU8RW",
+                    "state": "initialized",
+                    "tokenAmount": {
+                      "amount": "26438600000",
+                      "decimals": 5,
+                      "uiAmount": 264386.0,
+                      "uiAmountString": "264386"
+                    }
+                  },
+                  "type": "account"
+                },
+                "space": 165
+              },
+              "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+              "executable": false,
+              "rentEpoch": 18446744073709551615,
+              "space": 165
+            }
+          }
+        ]
+      },
+      "id": 1
+    }
+  },
+  "programRead": {
+    "rpc": "https://api.mainnet-beta.solana.com",
+    "date": "2026-11-02",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getMultipleAccounts",
+      "params": [
+        [
+          "strmRqUCoQUgGUan5YhzUZa6KqdzwX5L6FpUxfmKg5m",
+          "LocpQgucEQHbqNABEYvBvwoxCPsSbG91A1QaQhQQqjn"
+        ],
+        {
+          "encoding": "base64",
+          "commitment": "finalized"
+        }
+      ]
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "result": {
+        "context": {
+          "apiVersion": "4.3.2",
+          "slot": 464450353
+        },
+        "value": [
+          {
+            "data": ["AgAAAAGSpTGpl8b+SbZVhThxZCQxDHMtR6d+m4f2ljQafl6s", "base64"],
+            "executable": true,
+            "lamports": 1141440,
+            "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+            "rentEpoch": 18446744073709551615,
+            "space": 36
+          },
+          {
+            "data": ["AgAAAGehT7KrpXmKUXPeo2hl+tKP5LMjHyztglSFV5dmH796", "base64"],
+            "executable": true,
+            "lamports": 1141440,
+            "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+            "rentEpoch": 18446744073709551615,
+            "space": 36
+          }
+        ]
+      },
+      "id": 1
+    }
+  },
+  "idl": {
+    "source": "https://developers.jup.ag/docs/lock",
+    "rpc": "https://api.mainnet-beta.solana.com",
+    "date": "2026-11-02",
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "getAccountInfo",
+      "params": [
+        "2ntks693dfgHkYeyufFzV8jsf2QnEWoBbLHjXBE3WxWE",
+        {
+          "encoding": "base64",
+          "commitment": "finalized"
+        }
+      ]
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "result": {
+        "context": {
+          "apiVersion": "4.3.2",
+          "slot": 464450180
+        },
+        "value": {
+          "data": [
+            "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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 42456000,
+          "owner": "LocpQgucEQHbqNABEYvBvwoxCPsSbG91A1QaQhQQqjn",
+          "rentEpoch": 18446744073709551615,
+          "space": 5972
+        }
+      },
+      "id": 1
+    }
+  }
+}

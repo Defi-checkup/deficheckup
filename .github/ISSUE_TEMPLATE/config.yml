@@ -1,0 +1,6 @@
+# Keep blank issues available until .github/SECURITY.md has a working private reporting channel.
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/Defi-checkup/deficheckup/blob/main/.github/SECURITY.md
+    about: Read the security policy. Do not post exploit details, secrets or personal wallet data in a public issue.

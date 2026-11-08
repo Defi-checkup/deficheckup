@@ -1,0 +1,146 @@
+---
+import '../styles/fonts.css';
+import { buildEnvironment } from '../../scripts/build-environment';
+import '../styles/global.css';
+import displayFont from '../assets/fonts/bricolage-titles.woff2?url';
+import bodyFont from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+const staging = buildEnvironment(process.env.DEFICHECKUP_ENV) === 'staging';
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+}
+const {
+  title = 'Find overlooked wallet balances | DeFi Checkup',
+  description = 'Find overlooked balances across your wallets. Free and read only. No wallet connection. No signatures.',
+  image = '/social/home.png',
+  article = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', Astro.site);
+const socialImage = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {staging && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:site_name" content="DeFi Checkup" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${title}. No wallet connection. No signatures.`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={`${title}. No wallet connection. No signatures.`} />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={bodyFont} as="font" type="font/woff2" crossorigin />
+    <meta name="referrer" content="no-referrer" />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header>
+      <p class="safety-line">No wallet connection. No signatures.</p>
+      {staging && (
+        <p class="safety-line notice" data-test-environment>
+          Test environment
+        </p>
+      )}
+      <div class="site-header">
+        <a class="wordmark" href="/" aria-label="DeFi Checkup home">
+          <svg
+            class="logo-mark"
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="1 1 88 88"
+          >
+            <circle cx="6" cy="6" r="3" fill="#3a4152" />
+            <circle cx="6" cy="18" r="3" fill="#3a4152" />
+            <circle cx="6" cy="30" r="3" fill="#3a4152" />
+            <circle cx="6" cy="42" r="3" fill="#3a4152" />
+            <circle cx="6" cy="54" r="3" fill="#3a4152" />
+            <circle cx="6" cy="66" r="3" fill="#3a4152" />
+            <circle cx="6" cy="78" r="3" fill="#3a4152" />
+            <circle cx="18" cy="6" r="3" fill="#3a4152" />
+            <circle cx="18" cy="18" r="3" fill="#3a4152" />
+            <circle cx="18" cy="66" r="3" fill="#3a4152" />
+            <circle cx="18" cy="78" r="3" fill="#3a4152" />
+            <circle cx="30" cy="6" r="3" fill="#3a4152" />
+            <circle cx="30" cy="78" r="3" fill="#3a4152" />
+            <circle cx="42" cy="6" r="3" fill="#3a4152" />
+            <circle cx="42" cy="78" r="3" fill="#3a4152" />
+            <circle cx="54" cy="6" r="3" fill="#3a4152" />
+            <circle cx="54" cy="78" r="3" fill="#3a4152" />
+            <circle cx="66" cy="6" r="3" fill="#3a4152" />
+            <circle cx="66" cy="18" r="3" fill="#3a4152" />
+            <circle cx="78" cy="6" r="3" fill="#3a4152" />
+            <circle cx="78" cy="18" r="3" fill="#3a4152" />
+            <circle cx="78" cy="30" r="3" fill="#3a4152" />
+            <circle cx="78" cy="42" r="3" fill="#3a4152" />
+            <circle cx="78" cy="54" r="3" fill="#3a4152" />
+            <circle cx="30" cy="30" r="3.6" fill="#ffb84d" />
+            <circle cx="30" cy="42" r="3.6" fill="#ffb84d" />
+            <circle cx="30" cy="54" r="3.6" fill="#ffb84d" />
+            <circle cx="42" cy="30" r="3.6" fill="#ffb84d" />
+            <circle cx="42" cy="42" r="3.6" fill="#ffb84d" />
+            <circle cx="42" cy="54" r="3.6" fill="#ffb84d" />
+            <circle cx="54" cy="30" r="3.6" fill="#ffb84d" />
+            <circle cx="54" cy="42" r="3.6" fill="#ffb84d" />
+            <circle cx="54" cy="54" r="3.6" fill="#ffb84d" />
+            <circle cx="42" cy="42" r="24" fill="none" stroke="#eef1f6" stroke-width="7" />
+            <path d="M59 59L81 81" stroke="#eef1f6" stroke-width="9" stroke-linecap="round" />
+          </svg>
+          DeFi Checkup
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="/protocols">Protocols</a>
+          <a href="/privacy">Privacy</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer>
+      Free, open source and read only. <a href="/privacy">How your scan stays private</a>
+      {' · '}
+      <a href="/closing-soon">Recovery deadlines</a>
+      {' · '}
+      <a href="/support">
+        Support the project{' '}
+        <svg
+          class="heart"
+          viewBox="0 0 16 16"
+          width="1em"
+          height="1em"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            fill="currentColor"
+            d="M8 14.2 1.9 8.4A3.7 3.7 0 0 1 7.2 3.2L8 4l.8-.8a3.7 3.7 0 0 1 5.3 5.2Z"
+          />
+        </svg>
+      </a>
+    </footer>
+  </body>
+</html>
